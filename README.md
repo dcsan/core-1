@@ -308,7 +308,7 @@ will redirect to, e.g., '/user/ae8WQQk6DrtDzA2AZ' after succesful login :-)
 
 All the above fields are optional and fall back to default values in case you don't provide them. Default values are as follows:
 
-| Route           | Code          | Name            | Path             | Template       | Redirect after Timeout |
+| purpose         | Code          | Route           | Path             | Template       | Redirect after Timeout |
 | --------------- | ------------- | --------------- | ---------------  | -------------- |:----------------------:|
 | change password | changePwd     | atChangePwd     | /change-password | fullPageAtForm |                        |
 | enroll account  | enrollAccount | atEnrolAccount  | /enroll-account  | fullPageAtForm |            X           |
@@ -321,6 +321,7 @@ All the above fields are optional and fall back to default values in case you do
 If `layoutTemplate` is not specified, it falls back to what is currently set up with Iron-Router.
 If `redirect` is not specified, it default to the previous route (obviously routes set up with `AccountsTemplates.configureRoute` are excluded to provide a better user experience). What more, when the login form is shown to protect private content (see [Content Protection](#content-protection), the user is redirect to the protected page after successful sign in or sign up, regardless of whether a `redirect` parameter was passed for `signIn` or `signUp` route configuration or not.
 
+When navigating in code, you would use the Route name like `Rounter.go('atSignIn') ` 
 
 <a name="content-protection"/>
 #### Content Protection
